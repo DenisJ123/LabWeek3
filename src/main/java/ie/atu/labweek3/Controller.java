@@ -17,6 +17,7 @@ public class Controller {
     public String getUser(@PathVariable String name, @PathVariable String email){
 
         return "Valid";
+
     }
 
 }
