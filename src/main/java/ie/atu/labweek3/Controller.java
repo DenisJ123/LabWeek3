@@ -1,9 +1,7 @@
 package ie.atu.labweek3;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
@@ -14,10 +12,18 @@ public class Controller {
     }
 
     @GetMapping("/newUser1/{name}/{email}")
-    public String getUser(@PathVariable String name, @PathVariable String email){
 
+    public String getUser(@PathVariable String name, @PathVariable String email){
+        userService.registerUser(name, email);
         return "Valid";
 
+    }
+
+    @PostMapping("/newUser1")
+    public String getUser (@RequestBody User denis) {
+        userService.registerUser(denis.getName(), denis.getEmail());
+
+        return "Done";
     }
 
 }
