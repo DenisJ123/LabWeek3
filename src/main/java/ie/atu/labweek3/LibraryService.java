@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class LibaryService {
+public class LibraryService {
     ArrayList<Book> list = new ArrayList<>();
 
     public void add(Book book){
