@@ -23,5 +23,6 @@ public class LibraryController {
     @PostMapping
     public void addBook (Book book1){
         libraryService.add(book1);
+
     }
 }
